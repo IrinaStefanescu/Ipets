@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>Elevi</title>
+    <link rel="stylesheet" type="text/css" href="/styles/model.css">
+    <script src="/scripts/model.js"></script>
+
+    <%- include("../fragments/head") %>
+
+</head>
+
+<body class="light">
+
+    <header>
+        <%- include("../fragments/header") %>
+    </header>
+
+    <main style=" background: var(--back-color);">
+        <div class="afisaj" style="padding-top: 100px; padding-bottom: 50px;">
+            <h1 style="color: rgb(139, 115, 139);">Elevi</h1>
+
+            <p id="statistici"></p><button id="reseteazaLocalStorage">Resetează LocalStorage</button>
+
+            <select id="ordine">
+                <option value="asc">Ascendent</option>
+                <option value="desc">Descendent</option>
+            </select>
+            <button id="sorteaza">Sortează</button>
+            <input type="text" id="nume_elev">
+            <button id="filtreaza">Filtrează</button>
+
+            <form method="post" action="/trimiteMail">
+                <input type="text" name="email">
+                <input type="submit" value="Trimite Mail">
+            </form>
+
+            <div id="grid-elevi">
+                <% for (var i = 0; i < locals.elevi.length; i++) { %>
+                    <article>
+                        <h2>
+                            <span class="nume"><%= locals.elevi[i].nume %></span>
+                            <%= locals.elevi[i].prenume %>
+                        </h2>
+                        <p>
+                            <%= locals.elevi[i].grupa %>
+                        </p>
+                        <ul class="note">
+                            <% var note = locals.elevi[i].note.split(",") %>
+                                <% for (var j = 0; j < note.length; j++) { %>
+                                    <li>
+                                        <%= note[j] %>
+                                    </li>
+                                    <% } %>
+                        </ul>
+                    </article>
+                    <% } %>
+            </div>
+        </div>
+    </main>
+
+    <footer style="position: absolute; z-index: 100; text-align: center; background-color: rgb(78, 48, 78); color: white; line-height: 20px; width: 100%;">
+        <%- include("../fragments/footer") -%>
+    </footer>
+
+</body>
+
+</html>

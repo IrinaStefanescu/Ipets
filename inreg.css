@@ -1,0 +1,62 @@
+ * {
+     box-sizing: border-box;
+ }
+ 
+ .inreg {
+     margin: auto;
+ }
+ 
+ .container {
+     margin: auto;
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     height: 400px;
+     width: 350px;
+     z-index: -1;
+ }
+ 
+ input[type=file],
+ input[type=submit],
+ input[type=reset],
+ input[type=text],
+ input[type=password] {
+     background-color: #f8f8f8;
+     border: 2px solid rgb(128, 74, 128);
+     border-radius: 4px;
+     width: 100%;
+     padding: 12px;
+     margin: 5px 0 22px 0;
+     display: inline-block;
+ }
+ 
+ input[type=text]:focus,
+ input[type=file]:focus,
+ input[type=submit]:focus,
+ input[type=reset]:focus,
+ input[type=password]:focus {
+     border: 3px solid rgb(199, 139, 199);
+     outline: none;
+     background-color: #ddd;
+ }
+ 
+ hr {
+     border: 1.5px solid #f1f1f1;
+     margin-bottom: 25px;
+ }
+ 
+ select[id="ocup"] {
+     background-color: #f8f8f8;
+     border: 2px solid rgb(128, 74, 128);
+     border-radius: 4px;
+     width: 100%;
+     padding-left: 15px;
+     height: 50px;
+ }
+ 
+ #user {
+     width: 170px;
+     margin: 5px
+ }

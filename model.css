@@ -1,0 +1,28 @@
+#grid-elevi {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+}
+
+#grid-elevi article {
+    background-color: lightblue;
+    border: 1px solid gray;
+}
+
+#grid-elevi article ul {
+    padding-left: 2em;
+    ;
+}
+
+
+/*nth-child sau nth-of-type*/
+
+#grid-elevi article:nth-child(9n+3),
+#grid-elevi article:nth-child(9n+5),
+#grid-elevi article:nth-child(9n+7) {
+    background-color: white;
+}
+
+#grid-elevi article ul li:hover {
+    color: green;
+}

@@ -1,0 +1,100 @@
+html{
+  font-size: 12px;
+}
+
+.articles-font{
+  font-size: 17px;
+}
+
+.main-index{
+  background: var(--back-color);
+  display: block;
+}
+
+#wellcome{
+  margin: 0;
+  padding-bottom: 0;
+  width: auto;
+  padding-right: 10px;
+  word-wrap: wrap;
+  animation: none;
+}
+
+.pic-resp{
+  width: 100%;
+}
+
+aside{
+  width: 100%;
+  text-decoration: solid;
+}
+
+#articles{
+  min-width: 100%;
+  margin: 0;
+}
+
+#counters{
+  min-width: 100%;
+  margin: 0;
+  animation: none;
+}
+
+#counters:hover{
+  transform: none;
+}
+
+
+#webvtt{
+  min-width: 100%;
+  margin: 0;
+  padding-left: 0;
+}
+
+audio{
+  padding-bottom: 10px;
+}
+
+/*Static Gallery*/
+
+#gr {
+  display: block;
+  width: 80%;
+  padding-left: 40px;
+}
+
+#gr figure {
+  transition: none;
+}
+
+#gr figure:hover {
+  transform: none;
+}
+
+#gr img:hover {
+  border-radius: none;
+}
+
+
+/*Animated gallery*/
+
+#animated-gallery{
+  display: none;
+}
+
+/*Table*/ 
+
+.table-container {
+  overflow-x: auto;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+table {
+  min-width: 450px;
+}
+
+

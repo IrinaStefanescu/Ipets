@@ -1,0 +1,71 @@
+<header>
+    <nav>
+
+        <label id="hamburger" for="ch-menu">
+            <img src="images/hamburger_icon.png" alt="menu">
+        </label>
+        <input id="ch-menu" type="checkbox">
+        <ul class="menu">
+            <li><a href="/index">Acasa</a></li>
+            <li>
+                <label for="opt_acasa">
+                    Despre
+                </label>
+                <input class="ch-submenu" type="checkbox" id="opt_acasa">
+                <ul class="submenu">
+                    <li><a href="index#counters">Adopție</a></li>
+                    <li><a href="index#footerid">Contact</a></li>
+                </ul>
+            </li>
+
+            <li><a href="produse">Produse</a></li>
+            <li>
+                <label for="opt_galerii">
+                    Galerii
+                </label>
+                <input class="ch-submenu" type="checkbox" id="opt_galerii">
+                <ul class="submenu">
+                    <li><a href="desprenoi">Statica</a></li>
+                    <li><a href="index#animated-gallery">Animatie</a></li>
+                </ul>
+            </li>
+            <li><a href="inregistrare_user">Inregistrare</a></li>
+            <% if (locals.utilizator && locals.utilizator.rol=="admin") { %>
+                <li><a href="/useri">Utilizatori</a></li>
+                <% } %>
+        </ul>
+        <div class="light-dark-theme" style="padding-top: 10px;">
+            <input type="image" src="/images/sun.png" alt="Submit" width="30" height="30" id="sun" style="padding: 5px; margin-top: 5px;">
+            <input type="image" src="/images/moon.png" alt="Submit" width="28" height="28" id="moon" style="padding: 5px; margin-top: 5px">
+        </div>
+    </nav>
+
+    <% if (!locals.utilizator) { %>
+        <div style="padding-bottom: 30px;">
+            <p style="padding-top: 70px;">Vă rugăm să vă logați: <br/>
+                <form id="login" method="post" action="/login">
+
+                    <label>
+				Username: <input id="user" type="text" name="username" placeholder="Introduceți username" value="" required>
+			</label>
+                    <label>
+				Parolă: <input id="user" type="password" name="parola" placeholder="Introduceți parolă" value="" required>
+			</label>
+
+                    <input id="user" type="submit" value="Submit">
+                </form>
+        </div>
+        <% } %>
+
+            <% if (locals.utilizator && locals.utilizator.rol=="comun") { %>
+                <p style="padding-top: 80px;">
+                    <form action="/logout">
+                        <%= locals.utilizator.nume %>
+                            <%= locals.utilizator.prenume %>
+                                <input type="image" src="/images/exit.png" alt="submit" width="20" height="20" id="door" title="logout">
+                    </form>
+                </p>
+
+                <% } %>
+
+</header>

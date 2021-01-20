@@ -1,0 +1,106 @@
+/*Galerie animata*/
+$w:300px;
+$h:300px;
+$nrimg: 11;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.galerie {
+    width: $w;
+    height: $h;
+    position: relative;
+    overflow: hidden;
+
+    margin-bottom: 2rem;
+}
+
+.galerie figcaption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    text-align: center;
+}
+
+.galerie figure {
+    position: relative;
+    width: $w;
+    height: $h;
+}
+
+
+#animated_gallery figure {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    animation-name: animated_gall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-duration: $nrimg * 3s;
+    transform-origin: 0px center;
+}
+
+#animated_gallery:hover figure {
+    animation-play-state: paused;
+}
+
+
+@for $a from $nrimg through 1 {
+    #animated_gallery figure:nth-of-type(#{$a}) {
+        animation-delay:#{($nrimg-$a)*3}s;
+    }
+}
+$pas: 100 * 3 / $nrimg;
+
+
+@keyframes animated_gall {
+    0% {
+        z-index: 10;
+        opacity: 1;
+    }
+
+    4% {
+        transform: scaleY(1);
+    }
+
+    7% {
+        opacity: 1;
+        transform: scaleY(0.3) rotate(0deg);
+    }
+
+    #{ $pas}{
+        z-index: 10;
+        opacity: 0;
+        transform: scaleY(0.3) rotate(90deg);
+    }
+
+    #{ $pas + 0.001} {
+        z-index: -10;
+        transform: scaleY(0) rotate(90deg);
+    }
+
+    #{100 - $pas}{
+        opacity: 0;
+    }
+
+    #{100 - $pas + 1} {
+        opacity: 0;
+        transform: rotate(0deg);
+        z-index: -10;
+    }
+
+    #{100 - $pas + 2}  {
+        z-index: 0;
+    }
+
+    100% {
+        opacity: 1;
+        z-index: 0;
+    }
+}

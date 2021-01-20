@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <%- include("../fragments/head.ejs") %>
+        <title>Produse</title>
+</head>
+
+<body class="light" id="body-produse">
+    <header>
+        <%- include("../fragments/header.ejs") %>
+    </header>
+    <section class="input_fields" style="padding-top: 20px;">
+        <hr>
+        <label>Produs:
+            <input id="i_text" type="text" value="">
+        </label>
+
+
+        <label for="i_range">Pret: 20
+            <input id="i_range" type="range" min="20" max="1000" step="2" value="1000">1000 (selectat: <span
+                id="info_range">1000</span>)
+        </label>
+
+
+        <div class="input_inline"> Categorie:
+            <% const distinct=(value, index, self)=> {return self.indexOf(value) === index;}
+                        var products = [];
+                        for(let i=0; i<locals.produse.length; i++){ products.push(locals.produse[i].category);} var
+                            distinct_products=products.filter(distinct); console.log(distinct_products); for(let
+                            i=0;i<distinct_products.length;i++){ %>
+                <label><%=distinct_products[i]%>
+                <input id="i_rad<%=i+1%>" name="gr_rad" value="<%=distinct_products[i]%>" type="radio" /><span
+                    class="checkmark"></span>
+
+            </label>
+
+
+                <%}%>
+                    <label>Nimic
+                <input id="i_rad" name="gr_rad" value="nimic" checked type="radio" />
+            </label>
+        </div>
+
+
+        <div class="input_inline">
+            Disponibil în stoc:
+            <label> Disponibil
+                <input id="i_bool1" name="gr_chck" checked value="" type="checkbox" />
+            </label>
+            <label> Indisponibil
+                <input id="i_bool2" name="gr_chck" checked value="" type="checkbox" />
+            </label>
+        </div>
+
+
+        <label>Descriere:
+            <textarea id="i_textarea" value=""></textarea>
+        </label>
+
+        <br>
+        <label>Material:
+            <select id="i_sel_simplu">
+                <option value="nimic" selected>Nimic</option>
+                <% //const distinct=(value, index, self)=> {return self.indexOf(value) === index;}
+                    var products = [];
+                    for(let i=0;i<locals.produse.length;i++){ products.push(locals.produse[i].material);} var
+                        distinct_products=products.filter(distinct); console.log(distinct_products); for(let
+                        i=0;i<distinct_products.length;i++){ %>
+
+            <option value="<%=distinct_products[i]%>"><%=distinct_products[i]%></option>
+            <%}%>
+            </select>
+        </label>
+
+        <br><br>
+        <label>Culoare:
+            <select id="i_sel_multiplu" multiple size="2">
+                <option value="Rosu" selected>Rosu</option>
+                <option value="Verde" selected>Verde</option>
+                <option value="Portocaliu" selected>Portocaliu</option>
+                <option value="Negru" selected>Negru</option>
+                <option value="Galben" selected>Galben</option>
+                <option value="Maro" selected>Maro</option>
+                <option value="Albastru" selected>Albastru</option>
+                <option value="Gri" selected>Gri</option>
+                <option value="Roz" selected>Roz</option>
+                <option value="Crem" selected>Galben</option>
+                <option value="Alb" selected>Alb</option>
+            </select>
+        </label>
+
+        <script src="../scripts/sortari.js"></script>
+
+
+        <% var nume_produse=[]; 
+        for(let i=0;i<locals.produse.length;i++){
+                nume_produse.push(locals.produse[i].name); }
+            console.log(nume_produse); %>
+
+
+            <button id="filtrare">Filtrează</button>
+            <button id="resetare">Resetează filtre</button>
+            <button id="sort_asc">Sortare crescătoare</button>
+            <button id="sort_desc">Sortare descrescătoare</button>
+            <button id="avg">Calculează media prețurilor!</button>
+
+    </section>
+
+    <div style="margin-top: 80px;">
+        <h2 style="padding-bottom: 20px;">Produse</h2>
+        <section id="gr-produse">
+            <% for(let i=0; i<locals.produse.length; i++){ %>
+                <%- include("../fragments/produs.ejs", {produs:locals.produse[i]}) %>
+                    <% } %>
+        </section>
+    </div>
+
+    <footer id="footerid">
+        <%- include("../fragments/footer.ejs") %>
+    </footer>
+
+
+</body>
+
+
+</html>

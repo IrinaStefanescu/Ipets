@@ -1,0 +1,26 @@
+{
+  "name": "site_petshop",
+  "version": "1.0.0",
+  "description": "Site despre Pethsop.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "petshop"
+  ],
+  "author": "Irina Stefanescu",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "formidable": "^1.2.2",
+    "init": "^0.1.2",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.4.17",
+    "rimraf": "^3.0.2",
+    "session": "^0.1.0"
+  }
+}

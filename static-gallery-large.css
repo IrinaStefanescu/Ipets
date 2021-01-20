@@ -1,0 +1,48 @@
+main {
+    padding-left: 2em;
+    padding-right: 2em;
+    box-shadow: inset lightgray 0px 0px 10px;
+    background: white;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "gr-g-stat gr-g-stat gr-g-stat gr-g-stat" ". gr-test  gr-test  .";
+}
+
+
+/*Static gallery*/
+
+#gr {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 0;
+}
+
+#gr img {
+    width: 100%;
+}
+
+#gr figcaption {
+    text-align: center;
+    font-family: 'Ubuntu';
+}
+
+#gr figure {
+    transition: transform 0.7s;
+}
+
+#gr figure:hover {
+    transform: scale(1.5, 1.5) rotate(360deg);
+}
+
+#gr img:hover {
+    border-radius: 50%;
+}
+
+#galerie-statica {
+    grid-area: gr-g-stat;
+}
+
+#test {
+    grid-area: gr-test;
+}

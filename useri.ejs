@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>Date useri</title>
+
+
+    <%- include("../fragments/head") %>
+
+</head>
+
+<body class="light">
+
+    <header>
+        <%- include("../fragments/header") %>
+    </header>
+
+    <main style=" background: var(--back-color);">
+        <div class="afisaj" style="padding-top: 120px; padding-bottom: 50px;">
+            <h1 style="color: rgb(139, 115, 139);">Date despre useri</h1>
+            <br>
+            <table id="useri">
+                <tr>
+                    <th>Nume</th>
+                    <th>Prenume</th>
+                    <th>Username</th>
+                    <th>E-mail</th>
+                    <th>Comandă</th>
+                </tr>
+
+                <% for (var i = 0; i < useri.length; i++) { 
+				if(useri[i].rol=="comun"){
+				%>
+                    <tr>
+                        <td>
+                            <%= useri[i].nume %>
+                        </td>
+
+                        <td>
+                            <%= useri[i].prenume %>
+                        </td>
+                        <td>
+                            <%= useri[i].username %>
+                        </td>
+                        <td>
+                            <%= useri[i].email %>
+                        </td>
+
+                        <td>
+                            <form action="/sterge_utiliz" method="post">
+                                <input type="hidden" value="<%= useri[i].id %>" name="id">
+                                <input type="submit" value="Șterge utilizator">
+                            </form>
+                        </td>
+
+                    </tr>
+
+                    <% } %>
+                        <% } %>
+            </table>
+        </div>
+    </main>
+
+    <footer style="position: absolute; z-index: 100; text-align: center; background-color: rgb(78, 48, 78); color: white; line-height: 20px; width: 100%;">
+        <%- include("../fragments/footer") -%>
+    </footer>
+
+</body>
+
+</html>

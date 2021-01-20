@@ -1,0 +1,79 @@
+<html>
+<body style="background: var(--back-color);" class="light">
+<article id="art<%=locals.produs.id%>" class="<%=locals.produs.category%>">
+    <h3 class="nume">Nume:<a href="/produs/<%=locals.produs.id%>">
+            <%=locals.produs.name%>
+        </a></h3>
+    <p>Categorie:<span class="categorie"><%=locals.produs.category%></span>
+    </p>
+    <p class="descriere">
+        <%=locals.produs.description%>
+    </p>
+    <img src="<%=locals.produs.image%>" alt="<%=locals.produs.name%>" />
+    
+    <div class="table-cont" style="float: right;">
+        <table>
+            <colgroup>
+                <col span="2">
+                <col>
+                <col>
+                <col>
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th>Caracteristică</th>
+                    <th>Valoare</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Preț(LEI)</td>
+                    <td class="pret">
+                        <%=locals.produs.price%>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Culoare</td>
+                    <td class="culori">
+                        <%=locals.produs.colors%>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Materiale</td>
+                    <td class="material">
+                        <%=locals.produs.material%>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Dată fabricație</td>
+                    <% var luna=locals.produs.data_infiintare.getMonth(); var
+                        zi=locals.produs.data_infiintare.getDate(); var
+                        zi_saptamana=locals.produs.data_infiintare.getDay(); var
+                        an=locals.produs.data_infiintare.getFullYear(); var lunile_anului=["Ianuarie", "Februrarie"
+                        , "Martie" , "Aprilie" , "Mai" , "Iunie" , "Iulie" , "August" , "Septembrie" , "Octombrie"
+                        , "Noiembrie" , "Decembrie" ]; var zilele_sapt=['Dumincă', 'Luni' , 'Marți' , 'Miercuri' , 'Joi'
+                        , 'Vineri' , 'Sâmbătă' ]; var data_formatata=zi + '/' + lunile_anului[luna] + '/' + an + "(" +
+                        zilele_sapt[zi_saptamana] + ")" ; var data_time=an + '-' + luna + '-' + zi; %>
+                        <td class="data_fabricatie"><time datetime="<%=data_time%>"><%=data_formatata%></time></td>
+                </tr>
+
+                <tr>
+                    <td>Disponibilă în stoc</td>
+                    <td class="disponibilitate">
+                        <%=locals.produs.disponibility%>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<br><br>
+</article>
+</body>
+</html>
+
+

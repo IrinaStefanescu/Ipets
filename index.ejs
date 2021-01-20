@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <%- include("../fragments/head.ejs") %>
+</head>
+
+<body class="ligth">
+
+    <header>
+        <%- include("../fragments/header.ejs") %>
+            <% if (locals.utilizator && locals.utilizator.rol=="comun") { %>
+                <p style="float: right;">
+                    Bine ai venit,
+                    <%= locals.utilizator.username%>
+                        <% if (locals.utilizator.cale_imagine) { %>
+
+                            <img style="width: 100px; height: 100px;" src="<%= locals.utilizator.cale_imagine.substring(10)%>" alt="imagine-utiliz"></img>
+                            <%} else { %>
+                                <img src="/images/omulet.png" alt="omulet-utiliz"></img>
+                                <%}%>
+
+                </p>
+
+                <% } %>
+    </header>
+    <main class="main-index">
+        <!--the main part of a document; it should be unique; only one main element in a doc; -->
+        <section id="wellcome">
+            <div class="container1">
+                <h2>Bine ați venit la <i>IPETS!</i>&#9829;</h2><br>
+                <!--tagul semantic i-->
+                <p class="intro"><b>IPETS</b> este locul în care animăluțul tău poate îmbina utilul cu placutul.</p>
+            </div>
+        </section>
+
+        <!--Responsive image using picture and srcset-->
+        <section id="responsive-pic">
+            <picture id="media-pic">
+                <source class="pic-resp" media="(min-width:700px)" srcset="images/large-shoppic.jpg" alt="large shop-pic" title="Magazinul nostru" style="width:40vw;">
+                <source class="pic-resp" media="(min-width:500px)" srcset="images/medium-shoppic.jpg" alt="medium shop-pic" title="Magazinul nostru">
+                <img class="pic-resp" src="images/small-shoppic.jpg" alt="small shop-pic" title="Magazinul nostru">
+            </picture>
+            <!--Date tag-->
+
+            <aside id="despre_program"><i>În perioada <time datetime="2020-11-01">2020-11-01</time> și <time
+                    datetime="2020-12-01">2020-12-01</time> programul poate varia.</i></aside>
+            <br />
+        </section>
+
+        <section id="articles">
+            <div class="articles">
+                <div class="artcl">
+                    <!--specifies independent, self-contained content-->
+                    <i class="icon far fa-check-circle fa-4x"></i>
+                    <h2 class="articles-font">Profesionalism</h2>
+                    <!--tagul semantic strong-->
+                    <p><strong>Siguranță</strong> și <strong>încredere</strong>, înainte de toate.</p>
+                </div>
+                <div class="artcl">
+                    <i class="icon fas fa-bullseye fa-4x"></i>
+                    <h2 class="articles-font">Clientelă de elită</h2>
+                    <p>Toți avem animale, cele mai frumoase animale.</p>
+                </div>
+                <div class="artcl">
+                    <i class="icon fas fa-heart fa-4x"></i>
+                    <h2 class="articles-font">Produse de calitate</h2>
+                    <p>Cele mai bune produse, banii primiți înapoi.</p>
+                </div>
+            </div>
+            <br><br>
+        </section>
+
+        <section id="counters">
+            <!--Countere-->
+            <div id="countere">
+                <h1><i class="fa fa-bell" style="font-size:24px"></i>Animalele scoase spre adopție luna aceasta sunt:</h1><br>
+                <p>Câine Mastiff - 3 ani, 45 kg</p>
+                <p>Pisică British Shorthair - 2 ani, 8kg</p>
+                <p>Iepure Berbec pitic - 3 ani, 5kg</p>
+            </div>
+            <br><br>
+        </section>
+
+        <section id="webvtt">
+            <!--Audio + Video + Captures-->
+            <video id="videoclip" width="500px" height="auto" controls>
+                <source type="video/mp4" src="videos/dog.mp4">
+                <source type="video/webm" src="videos/dog.webm">
+                <track label="Romanian" kind="captions" lang="ro" srclang="ro"
+                    src="data:image/png;base64,V0VCVlRUIC0gU29tZSB0aXRsZQ0KDQowMDowMC4wMDAgLS0+IDAwOjAzLjAwMCBsaW5lOjAgYWxpZ246Y2VudGVyDQpCaW5lIGHIm2kgdmVuaXQgbGEgPGk+SVBFVFM8L2k+ICENCg0KMDA6MDMuMDAwIC0tPiAwMDowNy4wMDAgbGluZTowIGFsaWduOmNlbnRlcg0KQWljaSBwdXRlyJtpIGfEg3NpIGRlIGxhIG3Dom5jYXJlIHBlbnRydSBjw6JpbmksIHBpc2ljaSwgcGXImXRpIMiZaSByb3rEg3RvYXJlDQoNCjAwOjA3LjAwMCAtLT4gMDA6MTMuMDAwIGxpbmU6MCBhbGlnbjpjZW50ZXINCnDDom7EgyBsYSBqdWPEg3JpaSDImWkgYW5pbcSDbHXIm2UgZGUgYWRvcHRhdC4NCg0KMDA6MTMuMDAwIC0tPiAwMDoyMC4wMDAgbGluZTowIGFsaWduOmNlbnRlcg0KTnUgZXppdGHIm2kgc8SDIG5lIGNvbnRhY3RhyJtpIQ0KDQoNCg=="
+                    default>
+            </video>
+            <audio id="audio-id" width="500px" controls>
+                <source src="audio/bark.ogg" type="audio/ogg">
+                <source src="audio/bark.mp3" type="audio/mpeg">
+            </audio>
+        </section>
+        <section id="gal-anim">
+            <div id="animated-gallery" class="galerie">
+                <div class="gr2">
+                    <figure>
+                        <img src="images/tuns6.jpg" alt="tuns6" />
+                        <figcaption>Hei! Numele meu este Jessie.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/tuns2.jpg" alt="tuns2" />
+                        <figcaption>Hei! Numele meu este Lizuca.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/tuns4.jpg" alt="tuns4" />
+                        <figcaption>Hei! Numele meu este Otto.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/tuns3.png" alt="tuns3" />
+                        <figcaption>Hei! Numele meu este Box.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/tuns7.jpg" alt="tuns7" />
+                        <figcaption>Hei! Noi suntem prietenii tăi.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/tuns5.jpg" alt="tuns4" />
+                        <figcaption>Hei! Numele meu este Lance.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/tuns11.png" alt="tuns11" />
+                        <figcaption>Hei! Numele meu este Pufi.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/tuns10.jpg" alt="tuns10" />
+                        <figcaption>Hei! Numele meu este Oliver.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/tuns8.jpg" alt="tuns8" />
+                        <figcaption>Hei! Noi suntem prietenii tăi.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/tuns9.jpg" alt="tuns9" />
+                        <figcaption>Hei! Numele meu este Sasha.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/tuns1.png" alt="tuns1" />
+                        <figcaption>Hei! Numele meu este Max.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footerid">
+        <%- include("../fragments/footer.ejs") %>
+
+    </footer>
+</body>
+
+</html>

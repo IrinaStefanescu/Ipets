@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+<%- include("../fragments/head.ejs") %>
+</head>
+
+    <body>
+
+    <header>
+        <%- include("../fragments/header.ejs") %>
+    </header>
+
+            <main style="padding-top: 100px;">
+                <div>
+                    <h2>Produs unic</h2>
+                    </p>
+                    <%- include("../fragments/produs.ejs",{produs:locals.produs_unic}) %>
+                </div>
+            </main>
+
+        <footer id="footerid">
+            <%- include("../fragments/footer.ejs") %>
+        </footer>
+    </body>
+
+</html>

@@ -1,0 +1,130 @@
+html{
+    font-size: 13px;
+}
+
+
+.main-index {
+    box-shadow: inset lightgray 0px 0px 10px;
+    padding-right: 0;
+    padding-left: 0;
+    background: var(--back-color);
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "gr-wellcome gr-pic"
+                        "gr-articles gr-articles"
+                        "gr-counters gr-counters" 
+                        "gr-webvtt gr-webvtt";
+}
+
+#videoclip{
+    width: 95%;
+    padding-left: 1%;
+}
+
+#audio-id{
+    width: 95%;
+    padding-left: 1%;
+}
+
+/*Static gallery*/
+
+#gr {
+    grid-template-columns: repeat(4, 1fr);
+}
+#gr>figure:nth-child(1){
+    grid-area: 1/1/2/3;
+}
+
+#gr>figure:nth-child(2){
+    grid-area: 1/3/2/5;
+}
+
+#gr>figure:nth-child(3){
+    grid-area: 2/2/3/4;
+}
+
+#gr>figure:nth-child(4){
+    grid-area: 3/1/4/3;
+}
+
+#gr>figure:nth-child(5){
+    grid-area: 3/3/4/5;
+}
+
+#gr>figure:nth-child(6){
+    grid-area: 4/2/5/4;
+}
+
+#gr>figure:nth-child(7){
+    grid-area: 5/1/6/3;
+}
+
+#gr>figure:nth-child(8){
+    grid-area: 5/3/6/5;
+}
+
+#gr>figure:nth-child(9){
+    grid-area: 6/2/7/4;
+}
+
+/*Animated gallery*/
+
+#animated-gallery{
+    display: none;
+}
+
+/*Paddings etc*/
+#wellcome{
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+#webvtt{
+    width: 100%;
+    padding-left: 20px;
+}
+
+aside{
+    padding-left: 3%;
+    text-align: center;
+}
+
+#responsive-pic{
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.pic-resp{
+    width: 40vw;
+    
+}
+
+
+#table-section{
+    padding-left: 20px;
+}
+
+
+.table-container {
+    overflow-x: auto;
+    width: 100%;
+
+  }
+
+.articles-font{
+    font-size: 17px;
+}
+
+#counters{
+    font-size: 15px;
+    animation: none;
+  }
+
+#counter:hover{
+    transform: none;
+}
+  
+  
+  
+

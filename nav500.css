@@ -1,0 +1,42 @@
+nav{
+    z-index:100;
+  }
+  #hamburger{
+    display:block;
+  }
+  ul.menu{
+    display:none;  
+  }
+  #ch-menu:checked~ul.menu{
+    display:block;  
+    animation-timing-function:linear;
+    animation-fill-mode:forwards;
+    animation-duration:0.3s;
+    animation-name:scale_submenu;
+    transform-origin:top left;
+  }
+
+  @keyframes scale_submenu{
+    0% {transform: scaleY(0) scaleX(0);} 
+    100%{transform: scaleY(1) scaleX(1);}
+}
+
+
+  ul.menu>li{
+    width:100%;
+    background: rgb(78, 48, 78);
+  }
+
+  ul.menu li:hover{
+    box-shadow: inset 0 0 10px 10px rgba(158, 114, 167, 0.7);
+  }
+
+#sun{
+  float: right;
+  margin-top: 25px;
+}
+
+#moon{
+  margin-top: 25px;
+  float: right;
+}

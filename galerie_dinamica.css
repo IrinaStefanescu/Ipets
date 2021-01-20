@@ -1,0 +1,193 @@
+/*Galerie animata*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.galerie {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.galerie figcaption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  text-align: center;
+}
+
+.galerie figure {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+#animated_gallery figure {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  -webkit-animation-name: animated_gall;
+          animation-name: animated_gall;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 33s;
+          animation-duration: 33s;
+  -webkit-transform-origin: 0px center;
+          transform-origin: 0px center;
+}
+
+#animated_gallery figure:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+#animated_gallery figure:nth-of-type(11) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+#animated_gallery figure:nth-of-type(10) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+#animated_gallery figure:nth-of-type(9) {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+
+#animated_gallery figure:nth-of-type(8) {
+  -webkit-animation-delay: 9s;
+          animation-delay: 9s;
+}
+
+#animated_gallery figure:nth-of-type(7) {
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+}
+
+#animated_gallery figure:nth-of-type(6) {
+  -webkit-animation-delay: 15s;
+          animation-delay: 15s;
+}
+
+#animated_gallery figure:nth-of-type(5) {
+  -webkit-animation-delay: 18s;
+          animation-delay: 18s;
+}
+
+#animated_gallery figure:nth-of-type(4) {
+  -webkit-animation-delay: 21s;
+          animation-delay: 21s;
+}
+
+#animated_gallery figure:nth-of-type(3) {
+  -webkit-animation-delay: 24s;
+          animation-delay: 24s;
+}
+
+#animated_gallery figure:nth-of-type(2) {
+  -webkit-animation-delay: 27s;
+          animation-delay: 27s;
+}
+
+#animated_gallery figure:nth-of-type(1) {
+  -webkit-animation-delay: 30s;
+          animation-delay: 30s;
+}
+
+@-webkit-keyframes animated_gall {
+  0% {
+    z-index: 10;
+    opacity: 1;
+  }
+  4% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  7% {
+    opacity: 1;
+    -webkit-transform: scaleY(0.3) rotate(0deg);
+            transform: scaleY(0.3) rotate(0deg);
+  }
+  9.0908% {
+    z-index: 10;
+    opacity: 0;
+    -webkit-transform: scaleY(0.3) rotate(90deg);
+            transform: scaleY(0.3) rotate(90deg);
+  }
+  9.0909% {
+    z-index: -10;
+    -webkit-transform: scaleY(0) rotate(90deg);
+            transform: scaleY(0) rotate(90deg);
+  }
+  90.9090% {
+    opacity: 0;
+  }
+  90.9091% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    z-index: -10;
+  }
+  90.9092% {
+    z-index: 0;
+  }
+  100% {
+    opacity: 1;
+    z-index: 0;
+  }
+}
+
+@keyframes animated_gall {
+  0% {
+    z-index: 10;
+    opacity: 1;
+  }
+  4% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  7% {
+    opacity: 1;
+    -webkit-transform: scaleY(0.3) rotate(0deg);
+            transform: scaleY(0.3) rotate(0deg);
+  }
+  9.0908% {
+    z-index: 10;
+    opacity: 0;
+    -webkit-transform: scaleY(0.3) rotate(90deg);
+            transform: scaleY(0.3) rotate(90deg);
+  }
+  9.0909% {
+    z-index: -10;
+    -webkit-transform: scaleY(0) rotate(90deg);
+            transform: scaleY(0) rotate(90deg);
+  }
+  90.9090% {
+    opacity: 0;
+  }
+  90.9091% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    z-index: -10;
+  }
+  90.9092% {
+    z-index: 0;
+  }
+  100% {
+    opacity: 1;
+    z-index: 0;
+  }
+}
+/*# sourceMappingURL=galerie_dinamica.css.map */

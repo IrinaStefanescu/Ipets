@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>Înregistrare utilizator</title>
+
+    <%- include("../fragments/head") %>
+</head>
+
+<body>
+
+    <header>
+        <%- include("../fragments/header") %>
+            <script src="../scripts/inregistrare.js"></script>
+    </header>
+
+    <main>
+        <div class="inreg">
+            <div class="container" style="margin-top: 170px;">
+                <h1 style="padding-bottom: 20px;">Înregistrare utilizator</h1>
+                <hr>
+                <% if (locals.err !="") { %>
+                    <form method="post" class="date" action="/inreg" id="inregistrare" enctype="multipart/form-data" onsubmit="return validateForm()">
+                        <p>
+                            <label for="username"><b>Username:</b></label>
+                            <input type="text" name="username" value="" id="username" placeholder="Introduceți username" required>
+                        </p>
+                        <p>
+                            <label for="nume"><b>Nume:</b></label>
+                            <input type="text" name="nume" value="" id="nume" placeholder="Inroduceți nume" required>
+                        </p>
+                        <p>
+                            <label for="prenume"><b>Prenume:</b></label>
+                            <input type="text" name="prenume" value="" id="prenume" placeholder="Introduceți prenume" required>
+                        </p>
+                        <p>
+                            <label for="pass"><b>Parolă:</b></label>
+                            <input type="password" name="parola" id="pass" placeHolder="Introduceți parola" value="" required>
+                        </p>
+                        <p>
+                            <label for="rpass"><b>Reintroduceți parola:</b></label>
+                            <input type="password" name="rparola" id="rpass" placeholder="Reintroduceți parola" value="" required>
+                        </p>
+                        <p>
+                            <label for="email"><b>Email:</b></label>
+                            <input type="text" placeHolder="Introduceți adresă email" id="email" name="email" value="" size="25" required>
+                        </p>
+                        <p>
+                            <label for="ocup"><b>Ocupație</b>
+                            <select id="ocup" name="ocupatie">
+                                    <option value="Nu doresc sa raspund" selected >Nu doresc să răspund</option>
+                                    <option value="Inginer" >Inginer</option>
+                                    <option value="Doctor" >Doctor</option>
+                                    <option value="Profesor">Profesor</option>
+                                    <option value="Student">Student</option>
+                                    <option value="Elev">Elev</option>
+                                    <option value="Pensionar">Pensionar</option>
+                                    <option value="Altele"></option>
+                                </select>
+                            </label>
+                        </p>
+                        <p>
+                            <label><b>Poză:</b></label>
+                            <input type="file" name="cale_imagine">
+                        </p>
+                        <p>
+                            <input type="submit" value="Trimite">
+                            <input type="reset" value="Resetează">
+                        </p>
+                    </form>
+                    <% } %>
+                        <%- (locals.raspuns?locals.raspuns:"")+"<br/>"+(locals.err?locals.err:"")%>
+
+            </div>
+        </div>
+    </main>
+
+    <footer id="inreg-footer" style="position: absolute; z-index: 100; text-align: center; background-color: rgb(78, 48, 78); color: white; margin-top: 950px; line-height: 20px; width: 100%;">
+        <%- include("../fragments/footer") %>
+    </footer>
+
+</body>
+
+</html>
